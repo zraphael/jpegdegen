@@ -6,12 +6,12 @@ import "hardhat/console.sol";
 contract Counter {
     uint32 counter;
 
-    event CounterInc(address indexed addr, uint counter);
+    event CounterInc(uint counter);
 
     function count() public {
         counter++;
         console.log("Counter is now", counter);
-        emit CounterInc(msg.sender, counter);
+        emit CounterInc(counter);
     }
 
     function getCounter() public view returns (uint32) {
